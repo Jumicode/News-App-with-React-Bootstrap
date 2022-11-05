@@ -1,3 +1,4 @@
+import News from "./components/News";
 
 function App() {
 
@@ -5,7 +6,7 @@ function App() {
   return (
     <div >
       
-      <h1>Hello world</h1>
+      <News></News>
     </div>
   );
 }
