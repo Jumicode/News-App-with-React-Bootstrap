@@ -1,7 +1,25 @@
-import React from 'react';
+import React,{useEffect} from 'react';
+import { getNews } from '../service/AxiosService';
+
 
 const NewsMain = () => {
-    return (
+
+useEffect(() => {
+ getMainNews();
+}, []);
+
+
+const getMainNews = () =>{
+
+
+getNews()
+.then((res) =>{
+console.log(res);
+})
+
+}
+
+ return (
         <div>
             <h1>Hello world</h1>
         </div>
