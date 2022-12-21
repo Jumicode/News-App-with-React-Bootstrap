@@ -1,8 +1,13 @@
 import React from 'react';
 import NewsForm from './NewsForm';
 import { useDispatch,useSelector } from 'react-redux';
-import axios from "axios"
 import { setNewsSearch } from '../features/News/NewsSlice';
+import axios from "axios"
+import Card from 'react-bootstrap/Card';
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
+import '../styles/News.scss'
+
 
 
 
@@ -17,7 +22,6 @@ const dispatch = useDispatch();
 
 const getAllNews = e =>{
 
-  console.log(e.target.elements)
   const {news} = e.target.elements;
 
 
@@ -53,30 +57,48 @@ dispatch(setNewsSearch(res.data.articles));
 
 
     return (
-        <div className='NewsContainer'>
+
+      <div className='NewsContainer'>
+         
+
+<NewsForm  getAllNews={getAllNews}></NewsForm>
 
 
-<NewsForm getAllNews={getAllNews}></NewsForm>
+
+<Row   xs={1} md={2} className="g-4Search">
+<Col>
+<Card >
 
 
 
 {newsSearch.map((news,index) =>(
-    <div key={index} className='News'>
-    <img src={`${news.urlToImage}`} alt='image'></img>
-    <h1>{news.title}</h1>
-    <h2>{news.description} <a href={`${news.url}`} target='blank'>View all</a></h2>
-   <p>{news.publishedAt}</p>
+    <div key={index} className="News">
+    <Card.Img variant="top" src={`${news.urlToImage}`} alt='image' />
+    <Card.Body>
+              <Card.Title>{news.title}</Card.Title>
+              <Card.Text>
+              {news.description} 
+              <a href={`${news.url}`} target='blank'>View all</a>
+              <p>-{news.author}</p>
+              </Card.Text>
+             
+            </Card.Body>
+
+
+   
+  
+
 
     </div>
 
 
 ))}
 
+</Card>
+</Col>
+</Row>
 
 
-
-
-            
         </div>
     );
 }
