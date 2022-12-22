@@ -6,7 +6,7 @@ import axios from "axios"
 import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import '../styles/News.scss'
+import '../styles/News.css'
 
 
 
@@ -61,12 +61,12 @@ dispatch(setNewsSearch(res.data.articles));
       <div className='NewsContainer'>
          
 
-<NewsForm  getAllNews={getAllNews}></NewsForm>
-
-
+         <NewsForm  getAllNews={getAllNews}></NewsForm>
 
 <Row   xs={1} md={2} className="g-4Search">
+
 <Col>
+
 <Card >
 
 
@@ -79,7 +79,7 @@ dispatch(setNewsSearch(res.data.articles));
               <Card.Text>
               {news.description} 
               <a href={`${news.url}`} target='blank'>View all</a>
-              <p>-{news.author}</p>
+              <span>-{news.author}</span>
               </Card.Text>
              
             </Card.Body>
