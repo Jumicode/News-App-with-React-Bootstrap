@@ -3,7 +3,6 @@ import { NavLink } from "react-router-dom";
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import '../styles/News.css'
 
 
 
@@ -21,44 +20,44 @@ const NavBar = () => {
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
-           
-          
+            <ul>
+            <li>
                 <NavLink
                     to='/'
-                    className='link'
                     
 
                 >Main</NavLink>
-            
-       
-                
+            </li>
+        </ul>
+        <ul>
+                <li>
                     <NavLink
                         to='/Sports'
-                        className='link'
+
                     >Sports</NavLink>
-               
-           
-                
+                </li>
+            </ul><ul>
+                <li>
                     <NavLink
                         to='/Entertainment'
-                        className='link'
+
                     >Entertainment</NavLink>
-              
-           
-           
+                </li>
+            </ul><ul>
+                <li>
                     <NavLink
                         to='/Technology'
-                        className='link'
+
                     >Technology</NavLink>
-               
-            
-                
+                </li>
+            </ul><ul>
+                <li>
                     <NavLink
                         to='/Search'
-                        className='link'
+
                     >Search</NavLink>
-              
-           
+                </li>
+            </ul>
         
           </Nav>
           

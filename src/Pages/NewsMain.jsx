@@ -5,7 +5,7 @@ import { setNewsMain } from '../features/News/NewsSlice';
 import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import '../styles/News.css'
+import '../styles/News.scss'
 
 
 
@@ -20,7 +20,6 @@ const { newsMain } = useSelector((state) => state.news)
 
 useEffect(() => {
  getMainNews();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
 }, []);
 
 const dispatch = useDispatch();
@@ -41,7 +40,6 @@ dispatch(setNewsMain(res.data.articles))
  return (
         <div className='NewsContainer'>
          
-         <h1 className='Title'>News Main</h1>
 
 <Row   xs={1} md={2} className="g-4">
 <Col>
@@ -57,7 +55,7 @@ dispatch(setNewsMain(res.data.articles))
               <Card.Text>
               {news.description} 
               <a href={`${news.url}`} target='blank'>View all</a>
-              <span>-{news.author}</span>
+              <p>-{news.author}</p>
               </Card.Text>
              
             </Card.Body>

@@ -5,20 +5,19 @@ import { getTechnology } from '../service/AxiosService';
 import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import '../styles/News.css'
+import '../styles/News.scss'
 
 
 const Newstechnology = () => {
 
 
     const { newsTechnology } = useSelector((state) => state.news)
-    const dispatch = useDispatch();
+
     useEffect(() => {
     getAllTechnology();
-     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
-   
+    const dispatch = useDispatch();
 
 
 const getAllTechnology = () =>{
@@ -37,7 +36,6 @@ dispatch(setNewsTechnology(res.data.articles));
         <div className='NewsContainer'>
          
 
-         <h1 className='Title'>Technology</h1>
         <Row   xs={1} md={2} className="g-4">
         <Col>
         <Card >
@@ -52,7 +50,7 @@ dispatch(setNewsTechnology(res.data.articles));
                       <Card.Text>
                       {news.description} 
                       <a href={`${news.url}`} target='blank'>View all</a>
-                      <span>-{news.author}</span>
+                      <p>-{news.author}</p>
                       </Card.Text>
                      
                     </Card.Body>

@@ -5,7 +5,7 @@ import { setNewsEntertainment } from '../features/News/NewsSlice';
 import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import '../styles/News.css'
+import '../styles/News.scss'
 
 
 
@@ -18,7 +18,6 @@ const NewsEntertainment = () => {
  
 useEffect(() => {
   getEntertainmetNews()
-   // eslint-disable-next-line react-hooks/exhaustive-deps
 }, []);
 
 
@@ -39,7 +38,7 @@ const getEntertainmetNews =() => {
 
         <div className='NewsContainer'>
          
-         <h1 className='Title'>Entertainmet</h1>
+
 <Row   xs={1} md={2} className="g-4">
 <Col>
 <Card >
@@ -54,7 +53,7 @@ const getEntertainmetNews =() => {
               <Card.Text>
               {news.description} 
               <a href={`${news.url}`} target='blank'>View all</a>
-              <span>-{news.author}</span>
+              <p>-{news.author}</p>
               </Card.Text>
              
             </Card.Body>

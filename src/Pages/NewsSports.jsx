@@ -5,7 +5,7 @@ import { setNewsSports } from '../features/News/NewsSlice';
 import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import '../styles/News.css'
+import '../styles/News.scss'
 
 
 
@@ -18,7 +18,7 @@ const NewsSports = () => {
 useEffect(() => {
    
 getAllSportNews();
- // eslint-disable-next-line react-hooks/exhaustive-deps
+
 }, []);
 
 const dispatch = useDispatch();
@@ -39,7 +39,7 @@ const getAllSportNews = () =>{
     return (
         <div className='NewsContainer'>
          
-         <h1 className='Title'>Sports</h1>
+
         <Row   xs={1} md={2} className="g-4">
         <Col>
         <Card >
@@ -54,7 +54,7 @@ const getAllSportNews = () =>{
                       <Card.Text>
                       {news.description} 
                       <a href={`${news.url}`} target='blank'>View all</a>
-                      <span>-{news.author}</span>
+                      <p>-{news.author}</p>
                       </Card.Text>
                      
                     </Card.Body>
