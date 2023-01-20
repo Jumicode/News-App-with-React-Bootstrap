@@ -5,26 +5,26 @@ import axios from "axios"
 
 export const getNews = () =>{
 
-return axios.get('https://newsapi.org/v2/everything?q=world&apiKey=a730a3ace764491ca71be77ae83f1741');
+return axios.get('http://api.mediastack.com/v1/news?access_key=3dfefa6bfd4057fdcecf17af3195373a&categories=general&languages=en');
 
 }
 
 
 export const getSportNews = () =>{
     
-    return axios.get('https://newsapi.org/v2/everything?q=Sport&apiKey=a730a3ace764491ca71be77ae83f1741')
+    return axios.get('http://api.mediastack.com/v1/news?access_key=3dfefa6bfd4057fdcecf17af3195373a&&categories=sports&languages=en')
 }
 
 
 export const getEntertainmet = () =>{
 
 
-    return axios.get('https://newsapi.org/v2/everything?q=Entertainment&apiKey=a730a3ace764491ca71be77ae83f1741')
+    return axios.get('http://api.mediastack.com/v1/news?access_key=3dfefa6bfd4057fdcecf17af3195373a&categories=entertainment&languages=en')
 }
 
 
 export const getTechnology = () =>{
 
-    return axios.get('https://newsapi.org/v2/everything?q=Technology&apiKey=a730a3ace764491ca71be77ae83f1741');
+    return axios.get('http://api.mediastack.com/v1/news?access_key=3dfefa6bfd4057fdcecf17af3195373a&categories=technology&languages=en');
     
 }

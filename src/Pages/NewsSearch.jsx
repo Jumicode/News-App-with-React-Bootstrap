@@ -32,7 +32,7 @@ const NewsSearch = news.value;
 
 
 
-const res = `https://newsapi.org/v2/everything?q=${NewsSearch}&apiKey=a730a3ace764491ca71be77ae83f1741`;
+const res = `http://api.mediastack.com/v1/news?access_key=3dfefa6bfd4057fdcecf17af3195373a&keywords=${NewsSearch}&languages=en,es`;
 
 
 
@@ -44,7 +44,7 @@ axios.get(res)
 
 console.log(res.data);
 
-dispatch(setNewsSearch(res.data.articles));
+dispatch(setNewsSearch(res.data.data));
 })
 .catch((err) =>{
   console.log(err);
@@ -73,7 +73,7 @@ dispatch(setNewsSearch(res.data.articles));
 
 {newsSearch.map((news,index) =>(
     <div key={index} className="News">
-    <Card.Img variant="top" src={`${news.urlToImage}`} alt='image' />
+    <Card.Img variant="top" src={`${news.image}`} alt='image' />
     <Card.Body>
               <Card.Title>{news.title}</Card.Title>
               <Card.Text>

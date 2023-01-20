@@ -27,7 +27,7 @@ const getAllTechnology = () =>{
     getTechnology()
     .then((res) =>{
         console.log(res);
-dispatch(setNewsTechnology(res.data.articles));
+dispatch(setNewsTechnology(res.data.data));
     })
 
 }
@@ -46,7 +46,7 @@ dispatch(setNewsTechnology(res.data.articles));
         
         {newsTechnology.map((news,index) =>(
             <div key={index} className="News">
-            <Card.Img variant="top" src={`${news.urlToImage}`} alt='image' />
+            <Card.Img variant="top" src={`${news.image}`} alt='image' />
             <Card.Body>
                       <Card.Title>{news.title}</Card.Title>
                       <Card.Text>

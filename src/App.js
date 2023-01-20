@@ -1,6 +1,6 @@
 import { BrowserRouter as Router ,Route,Routes} from "react-router-dom";
 import NavBar from "./components/NavBar";
-import News from "./Pages/News";
+import NewsSearch from "./Pages/NewsSearch";
 import NewsEntertainment from "./Pages/NewsEntertainment";
 import NewsMain from "./Pages/NewsMain";
 import NewsSports from "./Pages/NewsSports";
@@ -20,7 +20,7 @@ function App() {
       <Route path='/Sports' element={<NewsSports></NewsSports>}></Route>
       <Route path='/Entertainment' element={<NewsEntertainment></NewsEntertainment>}></Route>
       <Route path='/Technology' element={<NewsTechnology></NewsTechnology>}></Route>
-      <Route path='/Search' element={<News></News>}></Route>
+      <Route path='/Search' element={<NewsSearch></NewsSearch>}></Route>
      </Routes>
 
 

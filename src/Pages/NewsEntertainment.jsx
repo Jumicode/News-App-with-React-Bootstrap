@@ -29,7 +29,7 @@ const getEntertainmetNews =() => {
     getEntertainmet()
     .then((res) =>{
      console.log(res);
-     dispatch(setNewsEntertainment(res.data.articles));
+     dispatch(setNewsEntertainment(res.data.data));
     })
 
 }

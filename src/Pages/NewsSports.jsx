@@ -30,7 +30,7 @@ const getAllSportNews = () =>{
     getSportNews()
     .then((res =>{
         console.log(res);
-    dispatch(setNewsSports(res.data.articles));
+    dispatch(setNewsSports(res.data.data));
     }))
 
 }
@@ -48,7 +48,7 @@ const getAllSportNews = () =>{
         
         {newsSports.map((news,index) =>(
             <div key={index} className="News">
-            <Card.Img variant="top" src={`${news.urlToImage}`} alt='image' />
+            <Card.Img variant="top" src={`${news.image}`} alt='image' />
             <Card.Body>
                       <Card.Title>{news.title}</Card.Title>
                       <Card.Text>
